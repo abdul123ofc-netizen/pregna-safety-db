@@ -36,3 +36,10 @@ async def handle_form(initials: str = Form(...), batch: str = Form(...), descrip
     finally:
         cursor.close()
         conn.close()
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    # Railway provides the port number via an environment variable named 'PORT'
+    port = int(os.environ.get("PORT", 8000))
+    # This starts the server on the correct port so your website can connect
+    uvicorn.run(app, host="0.0.0.0", port=port)
