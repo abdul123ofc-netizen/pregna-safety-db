@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pregna Safety Reporting Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 20px; }
+        .container { background: white; padding: 30px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #0056b3; text-align: center; }
+        label { display: block; margin: 15px 0 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; background-color: #0056b3; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; font-size: 16px; }
+        button:hover { background-color: #004494; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Adverse Event Report</h2>
+        <form action="YOUR_API_URL_HERE" method="POST">
+            <label>Patient Initials</label>
+            <input type="text" name="patient_initials" placeholder="e.g. JD" required>
+
+            <label>Product Name</label>
+            <select name="product">
+                <option value="HIUS">Hormonal IUS (HIUS)</option>
+                <option value="IUD">Copper IUD</option>
+            </select>
+
+            <label>Batch Number</label>
+            <input type="text" name="batch_no" placeholder="e.g. BN12345" required>
+
+            <label>Event Description</label>
+            <textarea name="description" rows="4" placeholder="Describe the adverse event..." required></textarea>
+
+            <button type="submit">Submit Report to PV Department</button>
+        </form>
+    </div>
+</body>
+</html>
